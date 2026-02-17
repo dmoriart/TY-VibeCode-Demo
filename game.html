@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Snake Game | Vibe Coding Demo</title>
+    <meta name="description" content="Play Snake — built entirely through vibe coding with Claude AI.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+
+<body>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">⚡ VibeCode</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="game.html" class="active">🎮 Game</a></li>
+            <li><a href="music.html">🎵 Music</a></li>
+            <li><a href="meme.html">😂 Memes</a></li>
+            <li><a href="demo.html">🚀 Live Demo</a></li>
+        </ul>
+    </nav>
+
+    <main class="page">
+        <div class="game-container">
+            <div class="section-header animate-in">
+                <h2>🐍 Snake</h2>
+                <p>A classic game, built with nothing but vibes</p>
+            </div>
+
+            <div class="game-header animate-in">
+                <div class="game-score">
+                    <div class="game-score-label">Score</div>
+                    <div class="game-score-value" id="score">0</div>
+                </div>
+                <div class="game-score">
+                    <div class="game-score-label">High Score</div>
+                    <div class="game-score-value high" id="high-score">0</div>
+                </div>
+                <div class="game-score">
+                    <div class="game-score-label">Speed</div>
+                    <div class="game-score-value" id="speed-display">1x</div>
+                </div>
+            </div>
+
+            <canvas id="game-canvas" width="400" height="400"></canvas>
+
+            <div class="game-controls animate-in">
+                <button class="btn btn-primary" id="start-btn">▶ Start Game</button>
+                <button class="btn btn-secondary" id="reset-btn">↻ Reset</button>
+            </div>
+
+            <p class="game-message animate-in">Use arrow keys or WASD to move</p>
+
+            <!-- Mobile D-Pad -->
+            <div class="mobile-dpad">
+                <div class="dpad-grid">
+                    <div></div>
+                    <button class="dpad-btn" data-dir="up">▲</button>
+                    <div></div>
+                    <button class="dpad-btn" data-dir="left">◄</button>
+                    <div class="dpad-center"></div>
+                    <button class="dpad-btn" data-dir="right">►</button>
+                    <div></div>
+                    <button class="dpad-btn" data-dir="down">▼</button>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/game.js"></script>
+</body>
+
+</html>

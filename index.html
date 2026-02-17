@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Built with Vibes 🎸 | Vibe Coding Demo</title>
+  <meta name="description" content="A demo website built entirely through vibe coding with Claude AI — showcasing games, music, memes, and more.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">⚡ VibeCode</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="game.html">🎮 Game</a></li>
+      <li><a href="music.html">🎵 Music</a></li>
+      <li><a href="meme.html">😂 Memes</a></li>
+      <li><a href="demo.html">🚀 Live Demo</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <main class="page">
+    <section class="hero">
+      <div class="hero-badge">
+        <span class="badge">✨ 100% Built by AI</span>
+      </div>
+      <h1>
+        <span class="gradient-text">Built with Vibes</span> 🎸
+      </h1>
+      <p class="hero-subtitle">
+        This entire website was built by talking to Claude AI. No manual coding required.
+        Games, music, memes — all created through the power of <strong>vibe coding</strong>.
+      </p>
+      <div class="hero-buttons">
+        <a href="game.html" class="btn btn-primary">🎮 Play Snake</a>
+        <a href="music.html" class="btn btn-glow">🎵 Make Beats</a>
+        <a href="meme.html" class="btn btn-secondary">😂 Create Memes</a>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features-section">
+      <div class="section-header animate-in">
+        <h2>What Can Vibe Coding Build?</h2>
+        <p>Each of these features was created just by describing what we wanted in plain English.</p>
+      </div>
+
+      <div class="features-grid">
+        <a href="game.html" class="feature-card glass-card animate-in">
+          <span class="feature-icon">🎮</span>
+          <h3>Snake Game</h3>
+          <p>A fully playable Snake game with score tracking, speed increases, and neon graphics — all running in the browser.</p>
+          <span class="feature-tag">→ Try it out</span>
+        </a>
+
+        <a href="music.html" class="feature-card glass-card animate-in">
+          <span class="feature-icon">🎵</span>
+          <h3>Beat Pad</h3>
+          <p>Create beats with a 16-pad drum machine and step sequencer. All sounds are generated with code — no audio files needed!</p>
+          <span class="feature-tag">→ Make some noise</span>
+        </a>
+
+        <a href="meme.html" class="feature-card glass-card animate-in">
+          <span class="feature-icon">😂</span>
+          <h3>Meme Generator</h3>
+          <p>Pick a template, add your text, and download your meme as an image. Perfect for the group chat.</p>
+          <span class="feature-tag">→ Get creative</span>
+        </a>
+
+        <a href="demo.html" class="feature-card glass-card animate-in">
+          <span class="feature-icon">🚀</span>
+          <h3>Live Demo</h3>
+          <p>Watch features being built in real-time! This space is where we'll create something new together during the class.</p>
+          <span class="feature-tag">→ See the magic</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-bar">
+      <div class="stat animate-in">
+        <div class="stat-number" id="stat-lines">0</div>
+        <div class="stat-label">Lines of Code</div>
+      </div>
+      <div class="stat animate-in">
+        <div class="stat-number" id="stat-files">0</div>
+        <div class="stat-label">Files Created</div>
+      </div>
+      <div class="stat animate-in">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Lines Written by Hand</div>
+      </div>
+      <div class="stat animate-in">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Vibes</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Made with <span>♥</span> and AI — TY Vibe Coding Demo 2026</p>
+    </footer>
+  </main>
+
+  <script src="js/landing.js"></script>
+</body>
+</html>
