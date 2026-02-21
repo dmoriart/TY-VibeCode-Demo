@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎬 Movie Reviews | Vibe Coding Demo</title>
+  <meta name="description" content="Top 10 movies of all time — reviewed and rated. Built through vibe coding with Claude AI.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">⚡ VibeCode</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="game.html">🎮 Game</a></li>
+      <li><a href="music.html">🎵 Music</a></li>
+      <li><a href="meme.html">😂 Memes</a></li>
+      <li><a href="movies.html" class="active">🎬 Movies</a></li>
+      <li><a href="demo.html">🚀 Live Demo</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="movies-container">
+
+      <!-- Page Header -->
+      <div class="section-header animate-in">
+        <h2><span class="gradient-text">Top 10 Movies</span> of All Time</h2>
+        <p>The greatest films ever made — hand-picked, reviewed, and rated by vibes alone.</p>
+      </div>
+
+      <!-- Filter & Sort Controls -->
+      <div class="movies-controls animate-in">
+        <div class="movies-filter-group">
+          <button class="filter-btn active" data-filter="all">All Genres</button>
+          <button class="filter-btn" data-filter="drama">Drama</button>
+          <button class="filter-btn" data-filter="crime">Crime</button>
+          <button class="filter-btn" data-filter="sci-fi">Sci-Fi</button>
+          <button class="filter-btn" data-filter="thriller">Thriller</button>
+        </div>
+        <div class="movies-sort">
+          <label for="sort-select">Sort by</label>
+          <select id="sort-select">
+            <option value="rank">Rank</option>
+            <option value="year">Year</option>
+            <option value="rating">Rating</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Movie Grid -->
+      <div class="movies-grid" id="movies-grid">
+        <!-- Populated by movies.js -->
+      </div>
+
+      <!-- Movie Detail Modal -->
+      <div class="movie-modal" id="movie-modal" aria-hidden="true">
+        <div class="movie-modal-backdrop" id="modal-backdrop"></div>
+        <div class="movie-modal-content glass-card" role="dialog" aria-modal="true">
+          <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+          <div class="modal-inner" id="modal-inner">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <p>Made with <span>♥</span> and AI — TY Vibe Coding Demo 2026</p>
+    </footer>
+  </main>
+
+  <script src="js/movies.js"></script>
+</body>
+
+</html>
