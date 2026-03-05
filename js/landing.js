@@ -179,6 +179,69 @@ if (statsBar) {
   statsObserver.observe(statsBar);
 }
 
+// --- Women in STEM Homepage Grid ---
+const STEM_PREVIEW = [
+  {
+    name: 'Katherine Johnson',
+    field: 'Mathematics',
+    initials: 'KJ',
+    color: ['#6366f1', '#8b5cf6'],
+    quote: 'Girls are capable of doing everything men are capable of doing. Sometimes they have more imagination than men.',
+    bio: 'NASA mathematician whose orbital mechanics calculations were critical to the first U.S. crewed spaceflights and the Apollo 11 Moon landing.',
+  },
+  {
+    name: 'Marie Curie',
+    field: 'Physics',
+    initials: 'MC',
+    color: ['#0ea5e9', '#38bdf8'],
+    quote: 'Nothing in life is to be feared, it is only to be understood.',
+    bio: 'The first person to win two Nobel Prizes across two different sciences — Physics and Chemistry — for her research on radioactivity.',
+  },
+  {
+    name: 'Grace Hopper',
+    field: 'Computer Science',
+    initials: 'GH',
+    color: ['#f59e0b', '#fbbf24'],
+    quote: 'The most dangerous phrase in the language is: We\'ve always done it this way.',
+    bio: 'Pioneering computer scientist and U.S. Navy rear admiral who invented one of the first compilers and led development of COBOL.',
+  },
+];
+
+function renderStemHomeGrid() {
+  const grid = document.getElementById('stem-home-grid');
+  if (!grid) return;
+
+  STEM_PREVIEW.forEach(person => {
+    const card = document.createElement('div');
+    card.className = 'stem-card animate-in';
+
+    const photoDiv = document.createElement('div');
+    photoDiv.className = 'stem-card-photo';
+    photoDiv.style.background = `linear-gradient(135deg, ${person.color[0]}, ${person.color[1]})`;
+
+    const placeholder = document.createElement('div');
+    placeholder.className = 'stem-card-placeholder';
+    placeholder.style.background = `linear-gradient(135deg, ${person.color[0]}, ${person.color[1]})`;
+    placeholder.textContent = person.initials;
+    photoDiv.appendChild(placeholder);
+
+    const body = document.createElement('div');
+    body.className = 'stem-card-body';
+    body.innerHTML = `
+      <span class="stem-card-field">${person.field}</span>
+      <h3 class="stem-card-name">${person.name}</h3>
+      <p class="stem-card-bio">${person.bio}</p>
+      <p class="stem-card-quote">${person.quote}</p>
+    `;
+
+    card.appendChild(photoDiv);
+    card.appendChild(body);
+    grid.appendChild(card);
+  });
+}
+
+renderStemHomeGrid();
+
 // --- Scroll-based animations ---
 const animateElements = document.querySelectorAll('.animate-in');
 const scrollObserver = new IntersectionObserver((entries) => {

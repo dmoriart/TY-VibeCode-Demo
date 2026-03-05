@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nominate a Woman in STEM | VibeCode</title>
+  <meta name="description" content="Submit a nomination for our Women in STEM Spotlight feature.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">⚡ VibeCode</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="game.html">🎮 Game</a></li>
+      <li><a href="music.html">🎵 Music</a></li>
+      <li><a href="meme.html">😂 Memes</a></li>
+      <li><a href="movies.html">🎬 Movies</a></li>
+      <li><a href="stem-spotlight.html">🔬 STEM Spotlight</a></li>
+      <li><a href="demo.html">🚀 Live Demo</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <div class="nominate-container">
+
+      <!-- Back link -->
+      <a href="stem-spotlight.html" class="nominate-back animate-in">
+        &larr; Back to Spotlights
+      </a>
+
+      <!-- Header -->
+      <div class="section-header nominate-header animate-in">
+        <div class="hero-badge" style="margin-bottom:1rem">
+          <span class="badge">Nominations Open</span>
+        </div>
+        <h1><span class="gradient-text-stem">Nominate a Pioneer</span></h1>
+        <p>
+          Know a woman in STEM whose story deserves to be celebrated? Fill out the form
+          below and we'll review your nomination for our spotlight feature.
+        </p>
+      </div>
+
+      <!-- Form card -->
+      <div class="nominate-card glass-card animate-in">
+        <form id="nominate-form" class="nominate-form" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom-name">Full Name <span class="required">*</span></label>
+              <input type="text" id="nom-name" name="name" placeholder="e.g. Ada Lovelace" required>
+              <span class="form-error" id="err-name"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="nom-field">Field of STEM <span class="required">*</span></label>
+              <select id="nom-field" name="field" required>
+                <option value="" disabled selected>Select a field…</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Biology">Biology</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Aerospace">Aerospace</option>
+                <option value="Medicine">Medicine</option>
+                <option value="Environmental Science">Environmental Science</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Neuroscience">Neuroscience</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="form-error" id="err-field"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="nom-photo">Photo URL <span class="form-hint">(optional — a public image link)</span></label>
+            <input type="url" id="nom-photo" name="photo" placeholder="https://example.com/photo.jpg">
+            <span class="form-error" id="err-photo"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="nom-bio">Short Biography <span class="required">*</span></label>
+            <textarea id="nom-bio" name="bio" rows="5"
+              placeholder="Describe her key achievements, impact, and contributions to her field (50–500 characters)..."
+              required minlength="50" maxlength="500"></textarea>
+            <div class="char-counter">
+              <span id="bio-count">0</span> / 500
+            </div>
+            <span class="form-error" id="err-bio"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="nom-quote">Inspirational Quote <span class="required">*</span></label>
+            <textarea id="nom-quote" name="quote" rows="3"
+              placeholder="A memorable quote by or about her…"
+              required maxlength="250"></textarea>
+            <div class="char-counter">
+              <span id="quote-count">0</span> / 250
+            </div>
+            <span class="form-error" id="err-quote"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="nom-submitter">Your Name <span class="form-hint">(optional)</span></label>
+            <input type="text" id="nom-submitter" name="submitter" placeholder="Who is submitting this nomination?">
+          </div>
+
+          <div class="nominate-actions">
+            <button type="reset" class="btn btn-secondary">Clear Form</button>
+            <button type="submit" class="btn btn-stem" id="submit-btn">
+              Submit Nomination
+            </button>
+          </div>
+
+        </form>
+
+        <!-- Success state (hidden) -->
+        <div class="nominate-success" id="nominate-success" hidden>
+          <div class="success-icon">🎉</div>
+          <h2>Nomination Received!</h2>
+          <p>Thank you for celebrating women in STEM. We'll review your submission and be in touch soon.</p>
+          <div class="success-actions">
+            <a href="stem-spotlight.html" class="btn btn-stem">View All Spotlights</a>
+            <button class="btn btn-secondary" id="nominate-again-btn">Submit Another</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info cards -->
+      <div class="nominate-info-grid animate-in">
+        <div class="nominate-info-card glass-card">
+          <div class="info-icon">📋</div>
+          <h3>What We Look For</h3>
+          <p>Any woman — historical or contemporary — who has made meaningful contributions to science, technology, engineering, or mathematics.</p>
+        </div>
+        <div class="nominate-info-card glass-card">
+          <div class="info-icon">🔍</div>
+          <h3>Review Process</h3>
+          <p>All nominations are reviewed by our team. We aim to feature a diverse range of fields, backgrounds, and time periods.</p>
+        </div>
+        <div class="nominate-info-card glass-card">
+          <div class="info-icon">📢</div>
+          <h3>Spread the Word</h3>
+          <p>Share this page with educators, students, and anyone who believes in celebrating women's contributions to STEM.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Made with <span>♥</span> and AI — TY Vibe Coding Demo 2026</p>
+    </footer>
+
+  </main>
+
+  <script src="js/stem-nominate.js"></script>
+</body>
+</html>
