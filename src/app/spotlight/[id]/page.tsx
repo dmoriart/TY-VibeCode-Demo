@@ -5,21 +5,23 @@ import { spotlights } from "@/data/spotlights";
 import styles from "./page.module.css";
 
 interface Props {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export function generateStaticParams() {
   return spotlights.map((s) => ({ id: s.id }));
 }
 
-export function generateMetadata({ params }: Props) {
-  const s = spotlights.find((s) => s.id === params.id);
+export async function generateMetadata({ params }: Props) {
+  const { id } = await params;
+  const s = spotlights.find((s) => s.id === id);
   if (!s) return {};
   return { title: `${s.name} — Women in STEM Spotlight` };
 }
 
-export default function SpotlightPage({ params }: Props) {
-  const spotlight = spotlights.find((s) => s.id === params.id);
+export default async function SpotlightPage({ params }: Props) {
+  const { id } = await params;
+  const spotlight = spotlights.find((s) => s.id === id);
   if (!spotlight) notFound();
 
   const others = spotlights.filter((s) => s.id !== spotlight.id).slice(0, 3);

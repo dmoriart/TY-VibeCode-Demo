@@ -216,7 +216,7 @@ export default function NominatePage() {
               id="quote"
               name="quote"
               rows={3}
-              placeholder='"The most dangerous phrase in the language is: We\'ve always done it this way."'
+              placeholder={`"The most dangerous phrase in the language is: We've always done it this way."`}
               value={form.quote}
               onChange={handleChange}
               className={`${styles.input} ${styles.textarea}`}
