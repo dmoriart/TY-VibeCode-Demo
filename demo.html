@@ -29,49 +29,164 @@
     </nav>
 
     <main class="page">
-        <div class="live-demo-blank">
-            <div class="live-demo-icon">🏗️</div>
-            <h2>Live Build Space</h2>
-            <p>This is where we build something <strong>new</strong> together — right now, live.</p>
-            <p class="live-demo-hint">Tell me what to make and watch it appear.</p>
+
+        <!-- Banner -->
+        <div class="cao-banner">
+            🚫 None of these appeared on the CAO in 2020.
         </div>
+
+        <!-- Jobs Section -->
+        <section class="jobs-section">
+            <div class="section-header animate-in">
+                <h2>Jobs That Didn't Exist 5 Years Ago</h2>
+                <p>These are real roles being hired for right now — they just didn't have a name yet when you started
+                    secondary school.</p>
+            </div>
+
+            <div class="jobs-grid">
+
+                <div class="job-card glass-card animate-in">
+                    <div class="job-icon">💬</div>
+                    <div class="job-title">AI Prompt Engineer</div>
+                    <div class="job-salary">€65k</div>
+                    <div class="job-key-skill">
+                        <span class="skill-label">Key Skill</span>
+                        Knowing exactly how to talk to AI to get the best results
+                    </div>
+                </div>
+
+                <div class="job-card glass-card animate-in">
+                    <div class="job-icon">⚡</div>
+                    <div class="job-title">Vibe Coding Consultant</div>
+                    <div class="job-salary">€80k</div>
+                    <div class="job-key-skill">
+                        <span class="skill-label">Key Skill</span>
+                        Building full products using AI tools — no traditional coding required
+                    </div>
+                </div>
+
+                <div class="job-card glass-card animate-in">
+                    <div class="job-icon">⚖️</div>
+                    <div class="job-title">AI Ethics Reviewer</div>
+                    <div class="job-salary">€70k</div>
+                    <div class="job-key-skill">
+                        <span class="skill-label">Key Skill</span>
+                        Spotting bias, fairness issues, and risks in AI systems before they go live
+                    </div>
+                </div>
+
+                <div class="job-card glass-card animate-in">
+                    <div class="job-icon">🔄</div>
+                    <div class="job-title">Human-AI Workflow Designer</div>
+                    <div class="job-salary">€75k</div>
+                    <div class="job-key-skill">
+                        <span class="skill-label">Key Skill</span>
+                        Designing how humans and AI systems work together inside a company
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <style>
-        .live-demo-blank {
+        /* Banner */
+        .cao-banner {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(239, 68, 68, 0.06));
+            border-bottom: 1px solid rgba(239, 68, 68, 0.25);
+            color: #fca5a5;
+            text-align: center;
+            padding: 14px var(--space-xl);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        /* Jobs section */
+        .jobs-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-xl);
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .job-card {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: calc(100vh - 72px);
-            text-align: center;
-            padding: var(--space-3xl) var(--space-xl);
-            gap: var(--space-lg);
+            gap: var(--space-md);
+            padding: var(--space-2xl) var(--space-xl);
+            position: relative;
+            overflow: hidden;
         }
 
-        .live-demo-icon {
-            font-size: 5rem;
-            opacity: 0.3;
-            animation: float 3s ease-in-out infinite;
+        /* Accent top bar */
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity var(--transition-normal);
         }
 
-        .live-demo-blank h2 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            background: linear-gradient(135deg, var(--text-primary), var(--accent-primary));
+        .job-card:hover::before {
+            opacity: 1;
+        }
+
+        .job-icon {
+            font-size: 2.2rem;
+        }
+
+        .job-title {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .job-salary {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .live-demo-blank p {
+        .job-key-skill {
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 480px;
+            line-height: 1.5;
+            border-top: 1px solid var(--bg-glass-border);
+            padding-top: var(--space-md);
         }
 
-        .live-demo-hint {
-            font-size: 0.9rem !important;
-            color: var(--text-muted) !important;
+        .skill-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-primary);
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .jobs-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 
