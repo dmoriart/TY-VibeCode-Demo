@@ -11,9 +11,9 @@
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
 
-<body>
+<body class="demo-light">
 
-    <nav class="nav">
+    <nav class="nav demo-nav">
         <a href="index.html" class="nav-logo">⚡ VibeCode</a>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
             <span></span><span></span><span></span>
@@ -38,14 +38,14 @@
         <!-- Jobs Section -->
         <section class="jobs-section">
             <div class="section-header animate-in">
-                <h2>Jobs That Didn't Exist 5 Years Ago</h2>
-                <p>These are real roles being hired for right now — they just didn't have a name yet when you started
-                    secondary school.</p>
+                <h2 class="jobs-heading">Jobs That Didn't Exist 5 Years Ago</h2>
+                <p class="jobs-sub">These are real roles being hired for right now — they just didn't have a name yet
+                    when you started secondary school.</p>
             </div>
 
             <div class="jobs-grid">
 
-                <div class="job-card glass-card animate-in">
+                <div class="job-card animate-in">
                     <div class="job-icon">💬</div>
                     <div class="job-title">AI Prompt Engineer</div>
                     <div class="job-salary">€65k</div>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="job-card glass-card animate-in">
+                <div class="job-card animate-in">
                     <div class="job-icon">⚡</div>
                     <div class="job-title">Vibe Coding Consultant</div>
                     <div class="job-salary">€80k</div>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
 
-                <div class="job-card glass-card animate-in">
+                <div class="job-card animate-in">
                     <div class="job-icon">⚖️</div>
                     <div class="job-title">AI Ethics Reviewer</div>
                     <div class="job-salary">€70k</div>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
 
-                <div class="job-card glass-card animate-in">
+                <div class="job-card animate-in">
                     <div class="job-icon">🔄</div>
                     <div class="job-title">Human-AI Workflow Designer</div>
                     <div class="job-salary">€75k</div>
@@ -91,11 +91,47 @@
     </main>
 
     <style>
+        /* ── Light blue override ── */
+        .demo-light {
+            background: #e8f4fd;
+            color: #0f2a4a;
+        }
+
+        /* Nav */
+        .demo-nav {
+            background: rgba(255, 255, 255, 0.8) !important;
+            border-bottom: 1px solid #b8d9f5 !important;
+        }
+
+        .demo-nav .nav-logo {
+            background: linear-gradient(135deg, #1a6fb5, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .demo-nav .nav-links a {
+            color: #2563a8;
+        }
+
+        .demo-nav .nav-links a:hover,
+        .demo-nav .nav-links a.active {
+            color: #0f2a4a;
+        }
+
+        .demo-nav .nav-links a::after {
+            background: linear-gradient(90deg, #1a6fb5, #0ea5e9);
+        }
+
+        .demo-nav .nav-toggle span {
+            background: #1a6fb5;
+        }
+
         /* Banner */
         .cao-banner {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(239, 68, 68, 0.06));
-            border-bottom: 1px solid rgba(239, 68, 68, 0.25);
-            color: #fca5a5;
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+            border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+            color: #b91c1c;
             text-align: center;
             padding: 14px var(--space-xl);
             font-size: 1rem;
@@ -110,6 +146,19 @@
             padding: var(--space-3xl) var(--space-xl);
         }
 
+        .jobs-heading {
+            font-size: 2.4rem;
+            color: #0f2a4a;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: #0f2a4a !important;
+            background-clip: unset !important;
+        }
+
+        .jobs-sub {
+            color: #3b6fa0 !important;
+        }
+
         .jobs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -117,16 +166,21 @@
             margin-top: var(--space-2xl);
         }
 
+        /* Cards */
         .job-card {
+            background: #ffffff;
+            border: 1px solid #b8d9f5;
+            border-radius: var(--radius-md);
+            padding: var(--space-2xl) var(--space-xl);
             display: flex;
             flex-direction: column;
             gap: var(--space-md);
-            padding: var(--space-2xl) var(--space-xl);
+            box-shadow: 0 4px 20px rgba(26, 111, 181, 0.08);
+            transition: all var(--transition-normal);
             position: relative;
             overflow: hidden;
         }
 
-        /* Accent top bar */
         .job-card::before {
             content: '';
             position: absolute;
@@ -134,9 +188,15 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            background: linear-gradient(90deg, #1a6fb5, #0ea5e9);
             opacity: 0;
             transition: opacity var(--transition-normal);
+        }
+
+        .job-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(26, 111, 181, 0.15);
+            border-color: #7ec3f0;
         }
 
         .job-card:hover::before {
@@ -151,7 +211,7 @@
             font-family: var(--font-heading);
             font-size: 1.15rem;
             font-weight: 700;
-            color: var(--text-primary);
+            color: #0f2a4a;
             line-height: 1.3;
         }
 
@@ -159,7 +219,7 @@
             font-family: var(--font-heading);
             font-size: 1.8rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            background: linear-gradient(135deg, #1a6fb5, #0ea5e9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -167,9 +227,9 @@
 
         .job-key-skill {
             font-size: 0.85rem;
-            color: var(--text-secondary);
+            color: #3b6fa0;
             line-height: 1.5;
-            border-top: 1px solid var(--bg-glass-border);
+            border-top: 1px solid #d0e8f9;
             padding-top: var(--space-md);
         }
 
@@ -179,7 +239,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: var(--accent-primary);
+            color: #1a6fb5;
             margin-bottom: 4px;
         }
 
